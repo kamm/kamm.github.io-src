@@ -1,6 +1,6 @@
 +++
 date = 2016-11-28T00:00:00Z
-title = "O mnie"
+title = "o mnie"
 
 [menu.main]
 	weight = 1

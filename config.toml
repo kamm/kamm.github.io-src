@@ -1,6 +1,6 @@
 baseurl = "https://kamm.github.io"
 languageCode = "en-us"
-title = "kamm.io"
+title = "kamm"
 theme = "hyde"
 copyright = "Kamil Mętrak"
 blogpoststitle = "Wpisy na blogu"
