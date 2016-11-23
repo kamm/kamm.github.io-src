@@ -1,0 +1,25 @@
+baseurl = "https://kamm.github.io"
+languageCode = "en-us"
+title = "kamm.io"
+theme = "hyde"
+copyright = "Kamil Mętrak"
+blogpoststitle = "Wpisy na blogu"
+
+[Author]
+	name = "Kamil Mętrak"
+
+[Permalinks]
+	blog = "/:year/:month/:filename/"
+	code = "/:filename/"
+
+[Taxonomies]
+	tag = "tags"
+
+[params]
+	description = "developer's blog"
+	twitter = "https://twitter.com/kmetrak"
+	github = "https://github.com/kamm"
+	facebook = "https://www.facebook.com/kamil.metrak"
+	disqus = "kammgithubio"
+	linkedin = "https://www.linkedin.com/in/kamil-mętrak-56a63b43"
+

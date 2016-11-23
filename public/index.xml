@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>kamm.io</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>https://kamm.github.io/index.xml</link>
+    <language>en-us</language>
+    <author>Kamil Mętrak</author>
+    <copyright>2016 Kamil Mętrak</copyright>
+    <updated>Mon, 28 Nov 2016 00:00:00 UTC</updated>
+    
+    
+    
+    
+    <item>
+      <title>Zaczynamy</title>
+      <link>https://kamm.github.io/2016/11/zaczynamy/</link>
+      <pubDate>Wed, 23 Nov 2016 21:06:00 UTC</pubDate>
+      <author>Kamil Mętrak</author>
+      <guid>https://kamm.github.io/2016/11/zaczynamy/</guid>
+      <description>&lt;p&gt;A w zasadzie to ponownie zaczynam. Postanowiłem ponownie utworzyć tego bloga i zacząć wreszcie coś pisać. Brakowało mi miejsca gdzie mógłbym coś napisać, a miałem co więc tak wyszło.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+  </channel>
+</rss>
