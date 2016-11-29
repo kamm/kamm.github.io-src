@@ -7,7 +7,40 @@
     <language>en-us</language>
     <author>Kamil Mętrak</author>
     <copyright>2016 Kamil Mętrak</copyright>
-    <updated>Wed, 23 Nov 2016 22:35:52 CET</updated>
+    <updated>Tue, 29 Nov 2016 19:30:51 CET</updated>
+    
+    
+    <item>
+      <title>Babun - windowsowyshell w ktorym sie zakochasz</title>
+      <link>https://kamm.github.io/2016/11/babun-shell-w-ktorym-sie-zakochasz/</link>
+      <pubDate>Tue, 29 Nov 2016 19:30:51 CET</pubDate>
+      <author>Kamil Mętrak</author>
+      <guid>https://kamm.github.io/2016/11/babun-shell-w-ktorym-sie-zakochasz/</guid>
+      <description>&lt;p&gt;Shell jest narzędziem potrzebnym w pracy chyba każdemu programiście. Oczywiście, wiele IDE już próbowało zmienić to podejście integrując narzędzia do postaci klikanych rozwiązań, integracji gita czy mavena do edytora, ale nadal stary, poczciwy shell ma się dobrze. Jednak pojawia się pewne &amp;ldquo;ale&amp;rdquo;. Używanie w windowsie cmd jest problematyczne - kopiowanie i wklejanie jest bardzo utrudnione, zaznaczenie tekstu jeszcze bardziej a obsługa historii wywołań jest na szczątkowym poziomie. Podobno pwershell wiele z tych rzeczy rozwiązuje, ale i tak - unixowy shell jest tym, co programiści lubią.&lt;/p&gt;
+
+&lt;p&gt;Od czasu mojego powrotu do świata windowsa minęło już 11 lat - wczęsniej przez kilka lat używałem tylko linuksa. Miałem epizod na macu, ale to inna sprawa. Początkowo używałem kilku narzędzi przeniesionych do świta windowsowego, czyli miałem ls, wget i takie tam pod windowsem. Później odkryłem cygwina. Było lepiej, ale nadal ograniczał mnie sam emulator terminala - bo w końcu miałem wszystkie narzędzia, ale samo okienko było nadal toporne. Używałem przez pewien czas console2, aż trafiłem na puttycyg, czyli fork putty&amp;rsquo;iego, ale z możliwością działania jako emulator terminala do cygwina. Niestety, projekt przestał być rozwijany, ale i tak używałem go przez kilka lat.&lt;/p&gt;
+
+&lt;p&gt;Ostatnio trafiłem w firmie na szkolenie. Jednym z elementów był git. To co prawda znam (może nei rewelacyjnie, ale i tak poziom był podstawowy) i używam, ale było kilka osób &amp;ldquo;świeżych&amp;rdquo;. Potrzebowały one zainstalować sibie gita na windowsie. Prowadzący polecił babuna. Sam też się nim zainteresowałem i po instalacji zakochałem się w nim. Ale po kolei.&lt;/p&gt;
+
+&lt;p&gt;Czym jest babun? Jest to cygwin instalowany w katalogu użytkownika (nie wymaga nawet uprawnień administracyjnych) z masą dodatków. Przychodzi domyślnie z zainstalowaną już dużą liczbą pakietów, jak chociażby git, wget, curl. Z domyślnie zainstalowanym zsh razem z oh-my-zsh. Z menedżerem pakietów obsługiwanym z wiersza poleceń. Krótko mówiąc jest to cygwin na sterydach.&lt;/p&gt;
+
+&lt;p&gt;Najlepiej obejrzeć sobie filmy&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/95045348&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/5YbE07aDDDc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Jeszcze jedna sprawa - Projekt jest stworzony przez polaków, co przynajmniej dla mnie jest jego kolejnym plusem :)&lt;/p&gt;
+</description>
+    </item>
+    
     
     
     <item>
