@@ -1,11 +1,11 @@
 +++
 type = "post"
 date = "2016-11-29T19:30:51+01:00"
-title = "Babun - windowsowyshell w ktorym sie zakochasz"
+title = "Babun - windowsowy shell w którym się zakochasz"
 
 +++
 
-Shell jest narzędziem potrzebnym w pracy chyba każdemu programiście. Oczywiście, wiele IDE już próbowało zmienić to podejście integrując narzędzia do postaci klikanych rozwiązań, integracji gita czy mavena do edytora, ale nadal stary, poczciwy shell ma się dobrze. Jednak pojawia się pewne "ale". Używanie w windowsie cmd jest problematyczne - kopiowanie i wklejanie jest bardzo utrudnione, zaznaczenie tekstu jeszcze bardziej a obsługa historii wywołań jest na szczątkowym poziomie. Podobno pwershell wiele z tych rzeczy rozwiązuje, ale i tak - unixowy shell jest tym, co programiści lubią.
+Shell jest narzędziem potrzebnym w pracy chyba każdemu programiście. Oczywiście, wiele IDE już próbowało zmienić to podejście integrując narzędzia do postaci klikanych rozwiązań, integracji gita czy mavena do edytora, ale nadal stary, poczciwy shell ma się dobrze. Jednak pojawia się pewne "ale". Używanie w windowsie cmd jest problematyczne - kopiowanie i wklejanie jest bardzo utrudnione, zaznaczenie tekstu jeszcze bardziej a obsługa historii wywołań jest na szczątkowym poziomie. Podobno powershell wiele z tych rzeczy rozwiązuje, ale i tak - unixowy shell jest tym, co programiści lubią.
 
 Od czasu mojego powrotu do świata windowsa minęło już 11 lat - wczęsniej przez kilka lat używałem tylko linuksa. Miałem epizod na macu, ale to inna sprawa. Początkowo używałem kilku narzędzi przeniesionych do świta windowsowego, czyli miałem ls, wget i takie tam pod windowsem. Później odkryłem cygwina. Było lepiej, ale nadal ograniczał mnie sam emulator terminala - bo w końcu miałem wszystkie narzędzia, ale samo okienko było nadal toporne. Używałem przez pewien czas console2, aż trafiłem na puttycyg, czyli fork putty'iego, ale z możliwością działania jako emulator terminala do cygwina. Niestety, projekt przestał być rozwijany, ale i tak używałem go przez kilka lat.
 
