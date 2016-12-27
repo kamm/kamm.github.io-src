@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> Zaczynamy  &middot; kamm </title>
+  <title> ack  &middot; kamm </title>
 
   
   <link rel="stylesheet" href="https://kamm.github.io/css/poole.css">
@@ -87,10 +87,38 @@
 
   <div class="content container">
     <div class="post">
-    <h1 class="post-title">Zaczynamy</h1>
-    <span class="post-date">23 listopada 2016</span>
+    <h1 class="post-title">ack</h1>
+    <span class="post-date">27 grudnia 2016</span>
     
-    <p>A w zasadzie to ponownie zaczynam. Postanowiłem ponownie utworzyć tego bloga i zacząć wreszcie coś pisać. Brakowało mi miejsca gdzie mógłbym coś napisać, a miałem co więc tak wyszło. Będę starał się pisać technicznie, ale nie mogę tego zagwarantować - czasem może wyjść coś z życia innego niż tylko kodowanie :)</p>
+    <p>Przeszukiwanie kodu z konsoli jest problemem. Ja najczęściej używałem dziwnej składni</p>
+
+<pre><code>find . -type f | while read l; do grep -Ri &quot;System.err&quot; $l &amp;&amp; echo $l; done
+</code></pre>
+
+<p>Działać działa, ale jest nieeleganckie, nieefektywne, ma brzydkie wyjście, dużo błędnych wystąpień (pliki binarne, pliki gita/svna). Słowem - szybki hack.</p>
+
+<p>Ze względu na moje lenistwo nie chciało mi się szukać niczego innego, a okazało się że było warto. O acku dowiedziałem się z prezentacji babuna.</p>
+
+<p>Teraz kilka krótkich informacji:</p>
+
+<ul>
+<li>pomija pliki niebędące kodem (jak np. pliki gita czy svna)</li>
+<li>jest szybki</li>
+<li>jest nastawiony na przeszukiwanie kodu - ale nie &ldquo;promuje&rdquo; żadnego języka</li>
+<li>jest przenośny - napisany w perlu, ja go uzywam na linuksie i widzie i nie mam problemu</li>
+<li>ułatwia przeszukiwanie tylko określonych zasobów - tu może kilka słów więcej.</li>
+</ul>
+
+<p>Generalnie - rzadko kiedy mamy projekt robiony tylko używając jednej technologii. Do projektu javowego dodany SQL czy też moje najczęstsze połączenie ostatnimi czasy czyli xsl + xsl. Do tego wystarczy dodać prarametr</p>
+
+<pre><code>ack --java System.err
+</code></pre>
+
+<p>Coś takiego znajdzie wystąpienia System.err w plikach java, ale już pliki tekstowe odrzuci.</p>
+
+<p>W razie czego - wiem że istnieje silver searcher (ag), ale jeszcze nie miałem czasu go sprawdzić :)</p>
+
+<p><a href="http://beyondgrep.com/">http://beyondgrep.com/</a></p>
 
     
 
