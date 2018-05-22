@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Deweloperski Datapower  &middot; kamm </title>
+
+  
+  <link rel="stylesheet" href="https://kamm.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://kamm.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://kamm.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="kamm" />
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Raleway']
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="brand"><a href="https://kamm.github.io">kamm</a></h1>
+      <p class="lead">
+       developer&#39;s blog 
+      </p>
+    </div>
+
+
+
+    <ul class="sidebar-nav">
+      <li><a href="https://kamm.github.io/blog">blog</a></li>
+      
+        <li><a href="/about/">o mnie </a></li>
+      
+      <br/>
+      <li>kod</li>
+        
+        
+        
+        
+        <li><a href="https://github.com/kamm/kody-pna">kody-pna </a></li>
+        
+        
+        <li><a href="https://github.com/kamm/package-backup">package-backup </a></li>
+        
+        <li><a href="https://github.com/kamm/tomcat-watchdog">tomcat-watchdog </a></li>
+        
+        
+      
+    </ul>
+      <a href="https://www.facebook.com/kamil.metrak"><i class="fa fa-facebook-square"></i></a>&nbsp;&nbsp;
+      <a href="https://github.com/kamm"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+	  <a href="https://twitter.com/kmetrak"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+      <a href="https://www.linkedin.com/in/kamil-m%c4%99trak-56a63b43"><i class="fa fa-linkedin-square"></i></a>&nbsp;&nbsp;
+      
+
+    <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/>
+    &copy; 2016 Kamil Mętrak.<br/>
+	Some rights reserved.</p>
+    
+  </div>
+</div>
+
+
+  <div class="content container">
+    <div class="post">
+    <h1 class="post-title">Deweloperski Datapower</h1>
+    <span class="post-date">23 listopada 2016</span>
+    
+    <p>Datapower to XML Appliance. Zresztą mniejsza z tym co to jest, bo sam pewnie nie ogarniam wszystkich jego zastosowań i możliwości. Z mojej strony jest wykorzystywany jako środowisko do tworzenia wydajnych usług w oparciu o XSLT. Wszystko fajnie, ale pozostaje kwestia uruchomienia. Na maszynie fizycznej? Marnie - tam jest m. in. produkcja i nikt mi nie pozwoli robić tam developmentu. Na maszynie wirtualnej - spoko, mamy jedną sztukę licencji na wirtualkę. Ale - już parę razy miałem problem z innymi osobami. A to ktoś zmienił mi w czasie testów datasource&rsquo;a, a to ktoś wywalił port http.</p>
+
+<p>Ze względu na licencję nie mogłem sobie postawić lokalnego DP na lapku. A nawet gdybym postawił - to maszyna wirtualna startowała kilka minut, zajmowała sporo ramu i nie można na niej było zrobić i tak nic innego.</p>
+
+<p>I tak się męczyłem aż poszedłem na szkolenie :) Szkolenie było nt. devops - co to jest, z czym to się je, jakie są używane narzędzia itp. Jednym z pokazanych narzędzi był docker. Nie rozumiałem jak on działał i generalnie nie miałem do niego przekonania - jestem zawsze sceptycznie nastawiony do &ldquo;nowinek&rdquo;. W pewnej chwili kumpel wpisał sobie w konsoli</p>
+
+<pre><code>$ docker search datapower
+</code></pre>
+
+<p>i pojawiła się lista.</p>
+
+<pre><code>NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+ibmcom/datapower                  IBM DataPower Gateway                           36
+ramakrishnasanku/datapower_demo                                                   1
+garytu/datapower                  Enable WebGUI for ibmcom/datapower              0
+patrocinio/datapower                                                              0
+
+</code></pre>
+
+<p>Nie do końca rozumiałem co to ma być. Po chwili zostałem wyrwany ze szkolenia i musiałem coś z kimś pogadać. Trafiłem do nowych architektów i tam dziewczyna mi pokazuje odpalonego u siebie datapowera. Z dockera. Zebrałem szczękę z podłogi, wróciłęm na szkolenie, tym razem dając dockerowi szansę. Wszystko pięknie - jest ostępny na dockerze obraz zawierający datapowera. Najnowszą wersję - nowszą niż aktualnie mamy na produkcji.</p>
+
+<p>Pierwszy raz od lat przeczytałem licencję - obraz jest typowo do zastosowań deweloperskich i testów jednostkowych - czyli wszystko co mi jest potrzebne.</p>
+
+<p>Oczywiście, jako że pracuję na window$ie to docker mi nie zadziała bezpośrednio - muszę mieć wirtualkę z linuksem - jednak w takim rozwiązaniu ejst to znacznie lżejsze niż wirtualny DP. Nie jest to już wirtualka tylko na DP, ale też na wszystko co wymaga linuksa, a nie wystarcza tu cygwin.</p>
+
+<p>Także jest to dosyć prosta i szybka opcja na postawienie sobie deweloperskiego datapowera na którym można sobie psuć do woli. Na dodatek nie mogę popsuć za dużo - w końcu gdy coś za bardzo napsuję to po prostu stawiam obraz od nowa. Z wirtualnymi jest trochę więcej zabawy i z reguły wpływa to na innych dewów, a wręcz dotyka admina środowiska dev. Na fizycznych to boję się myśleć - podobno był już przypadek, że jeden gość tak napsuł, że trzeba było wzywać serwis z IBMa. Zatem bezpieczniej mieć swoje środowisko u siebie :)</p>
+
+    
+
+     
+	
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'kammgithubio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+</div>
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>kamm</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>https://kamm.github.io/blog/index.xml</link>
+    <language>en-us</language>
+    <author>Kamil Mętrak</author>
+    <copyright>2016 Kamil Mętrak</copyright>
+    <updated>Tue, 27 Dec 2016 21:10:15 CET</updated>
+    
+    
+    <item>
+      <title>ack</title>
+      <link>https://kamm.github.io/2016/12/ack/</link>
+      <pubDate>Tue, 27 Dec 2016 21:10:15 CET</pubDate>
+      <author>Kamil Mętrak</author>
+      <guid>https://kamm.github.io/2016/12/ack/</guid>
+      <description>&lt;p&gt;Przeszukiwanie kodu z konsoli jest problemem. Ja najczęściej używałem dziwnej składni&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;find . -type f | while read l; do grep -Ri &amp;quot;System.err&amp;quot; $l &amp;amp;&amp;amp; echo $l; done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Działać działa, ale jest nieeleganckie, nieefektywne, ma brzydkie wyjście, dużo błędnych wystąpień (pliki binarne, pliki gita/svna). Słowem - szybki hack.&lt;/p&gt;
+
+&lt;p&gt;Ze względu na moje lenistwo nie chciało mi się szukać niczego innego, a okazało się że było warto. O acku dowiedziałem się z prezentacji babuna.&lt;/p&gt;
+
+&lt;p&gt;Teraz kilka krótkich informacji:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pomija pliki niebędące kodem (jak np. pliki gita czy svna)&lt;/li&gt;
+&lt;li&gt;jest szybki&lt;/li&gt;
+&lt;li&gt;jest nastawiony na przeszukiwanie kodu - ale nie &amp;ldquo;promuje&amp;rdquo; żadnego języka&lt;/li&gt;
+&lt;li&gt;jest przenośny - napisany w perlu, ja go uzywam na linuksie i widzie i nie mam problemu&lt;/li&gt;
+&lt;li&gt;ułatwia przeszukiwanie tylko określonych zasobów - tu może kilka słów więcej.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Generalnie - rzadko kiedy mamy projekt robiony tylko używając jednej technologii. Do projektu javowego dodany SQL czy też moje najczęstsze połączenie ostatnimi czasy czyli xsl + xsl. Do tego wystarczy dodać prarametr&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ack --java System.err
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Coś takiego znajdzie wystąpienia System.err w plikach java, ale już pliki tekstowe odrzuci.&lt;/p&gt;
+
+&lt;p&gt;W razie czego - wiem że istnieje silver searcher (ag), ale jeszcze nie miałem czasu go sprawdzić :)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://beyondgrep.com/&#34;&gt;http://beyondgrep.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Babun - windowsowy shell w którym się zakochasz</title>
+      <link>https://kamm.github.io/2016/11/babun-shell-w-ktorym-sie-zakochasz/</link>
+      <pubDate>Tue, 29 Nov 2016 19:30:51 CET</pubDate>
+      <author>Kamil Mętrak</author>
+      <guid>https://kamm.github.io/2016/11/babun-shell-w-ktorym-sie-zakochasz/</guid>
+      <description>&lt;p&gt;Shell jest narzędziem potrzebnym w pracy chyba każdemu programiście. Oczywiście, wiele IDE już próbowało zmienić to podejście integrując narzędzia do postaci klikanych rozwiązań, integracji gita czy mavena do edytora, ale nadal stary, poczciwy shell ma się dobrze. Jednak pojawia się pewne &amp;ldquo;ale&amp;rdquo;. Używanie w windowsie cmd jest problematyczne - kopiowanie i wklejanie jest bardzo utrudnione, zaznaczenie tekstu jeszcze bardziej a obsługa historii wywołań jest na szczątkowym poziomie. Podobno powershell wiele z tych rzeczy rozwiązuje, ale i tak - unixowy shell jest tym, co programiści lubią.&lt;/p&gt;
+
+&lt;p&gt;Od czasu mojego powrotu do świata windowsa minęło już 11 lat - wczęsniej przez kilka lat używałem tylko linuksa. Miałem epizod na macu, ale to inna sprawa. Początkowo używałem kilku narzędzi przeniesionych do świta windowsowego, czyli miałem ls, wget i takie tam pod windowsem. Później odkryłem cygwina. Było lepiej, ale nadal ograniczał mnie sam emulator terminala - bo w końcu miałem wszystkie narzędzia, ale samo okienko było nadal toporne. Używałem przez pewien czas console2, aż trafiłem na puttycyg, czyli fork putty&amp;rsquo;iego, ale z możliwością działania jako emulator terminala do cygwina. Niestety, projekt przestał być rozwijany, ale i tak używałem go przez kilka lat.&lt;/p&gt;
+
+&lt;p&gt;Ostatnio trafiłem w firmie na szkolenie. Jednym z elementów był git. To co prawda znam (może nei rewelacyjnie, ale i tak poziom był podstawowy) i używam, ale było kilka osób &amp;ldquo;świeżych&amp;rdquo;. Potrzebowały one zainstalować sibie gita na windowsie. Prowadzący polecił babuna. Sam też się nim zainteresowałem i po instalacji zakochałem się w nim. Ale po kolei.&lt;/p&gt;
+
+&lt;p&gt;Czym jest babun? Jest to cygwin instalowany w katalogu użytkownika (nie wymaga nawet uprawnień administracyjnych) z masą dodatków. Przychodzi domyślnie z zainstalowaną już dużą liczbą pakietów, jak chociażby git, wget, curl. Z domyślnie zainstalowanym zsh razem z oh-my-zsh. Z menedżerem pakietów obsługiwanym z wiersza poleceń. Krótko mówiąc jest to cygwin na sterydach.&lt;/p&gt;
+
+&lt;p&gt;Najlepiej obejrzeć sobie filmy&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/95045348&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/5YbE07aDDDc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Jeszcze jedna sprawa - Projekt jest stworzony przez polaków, co przynajmniej dla mnie jest jego kolejnym plusem :)&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Deweloperski Datapower</title>
+      <link>https://kamm.github.io/2016/11/deweloperski-datapower/</link>
+      <pubDate>Wed, 23 Nov 2016 22:35:52 CET</pubDate>
+      <author>Kamil Mętrak</author>
+      <guid>https://kamm.github.io/2016/11/deweloperski-datapower/</guid>
+      <description>&lt;p&gt;Datapower to XML Appliance. Zresztą mniejsza z tym co to jest, bo sam pewnie nie ogarniam wszystkich jego zastosowań i możliwości. Z mojej strony jest wykorzystywany jako środowisko do tworzenia wydajnych usług w oparciu o XSLT. Wszystko fajnie, ale pozostaje kwestia uruchomienia. Na maszynie fizycznej? Marnie - tam jest m. in. produkcja i nikt mi nie pozwoli robić tam developmentu. Na maszynie wirtualnej - spoko, mamy jedną sztukę licencji na wirtualkę. Ale - już parę razy miałem problem z innymi osobami. A to ktoś zmienił mi w czasie testów datasource&amp;rsquo;a, a to ktoś wywalił port http.&lt;/p&gt;
+
+&lt;p&gt;Ze względu na licencję nie mogłem sobie postawić lokalnego DP na lapku. A nawet gdybym postawił - to maszyna wirtualna startowała kilka minut, zajmowała sporo ramu i nie można na niej było zrobić i tak nic innego.&lt;/p&gt;
+
+&lt;p&gt;I tak się męczyłem aż poszedłem na szkolenie :) Szkolenie było nt. devops - co to jest, z czym to się je, jakie są używane narzędzia itp. Jednym z pokazanych narzędzi był docker. Nie rozumiałem jak on działał i generalnie nie miałem do niego przekonania - jestem zawsze sceptycznie nastawiony do &amp;ldquo;nowinek&amp;rdquo;. W pewnej chwili kumpel wpisał sobie w konsoli&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker search datapower
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;i pojawiła się lista.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+ibmcom/datapower                  IBM DataPower Gateway                           36
+ramakrishnasanku/datapower_demo                                                   1
+garytu/datapower                  Enable WebGUI for ibmcom/datapower              0
+patrocinio/datapower                                                              0
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nie do końca rozumiałem co to ma być. Po chwili zostałem wyrwany ze szkolenia i musiałem coś z kimś pogadać. Trafiłem do nowych architektów i tam dziewczyna mi pokazuje odpalonego u siebie datapowera. Z dockera. Zebrałem szczękę z podłogi, wróciłęm na szkolenie, tym razem dając dockerowi szansę. Wszystko pięknie - jest ostępny na dockerze obraz zawierający datapowera. Najnowszą wersję - nowszą niż aktualnie mamy na produkcji.&lt;/p&gt;
+
+&lt;p&gt;Pierwszy raz od lat przeczytałem licencję - obraz jest typowo do zastosowań deweloperskich i testów jednostkowych - czyli wszystko co mi jest potrzebne.&lt;/p&gt;
+
+&lt;p&gt;Oczywiście, jako że pracuję na window$ie to docker mi nie zadziała bezpośrednio - muszę mieć wirtualkę z linuksem - jednak w takim rozwiązaniu ejst to znacznie lżejsze niż wirtualny DP. Nie jest to już wirtualka tylko na DP, ale też na wszystko co wymaga linuksa, a nie wystarcza tu cygwin.&lt;/p&gt;
+
+&lt;p&gt;Także jest to dosyć prosta i szybka opcja na postawienie sobie deweloperskiego datapowera na którym można sobie psuć do woli. Na dodatek nie mogę popsuć za dużo - w końcu gdy coś za bardzo napsuję to po prostu stawiam obraz od nowa. Z wirtualnymi jest trochę więcej zabawy i z reguły wpływa to na innych dewów, a wręcz dotyka admina środowiska dev. Na fizycznych to boję się myśleć - podobno był już przypadek, że jeden gość tak napsuł, że trzeba było wzywać serwis z IBMa. Zatem bezpieczniej mieć swoje środowisko u siebie :)&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Zaczynamy</title>
+      <link>https://kamm.github.io/2016/11/zaczynamy/</link>
+      <pubDate>Wed, 23 Nov 2016 21:06:00 UTC</pubDate>
+      <author>Kamil Mętrak</author>
+      <guid>https://kamm.github.io/2016/11/zaczynamy/</guid>
+      <description>&lt;p&gt;A w zasadzie to ponownie zaczynam. Postanowiłem ponownie utworzyć tego bloga i zacząć wreszcie coś pisać. Brakowało mi miejsca gdzie mógłbym coś napisać, a miałem co więc tak wyszło. Będę starał się pisać technicznie, ale nie mogę tego zagwarantować - czasem może wyjść coś z życia innego niż tylko kodowanie :)&lt;/p&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>
