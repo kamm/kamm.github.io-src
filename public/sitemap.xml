@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kamm.github.io/</loc>
-    <lastmod>2018-05-22T11:02:15+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kamm.github.io/2018/05/javacard/</loc>
+    <loc>https://kamm.github.io/2018/05/javacard-0/</loc>
     <lastmod>2018-05-22T11:02:15+01:00</lastmod>
   </url>
   
@@ -49,6 +45,29 @@
   <url>
     <loc>https://kamm.github.io/package-backup/</loc>
     <lastmod>2016-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kamm.github.io/blog/</loc>
+    <lastmod>2018-05-22T11:02:15+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kamm.github.io/code/</loc>
+    <lastmod>2016-11-23T17:00:01+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kamm.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kamm.github.io/</loc>
+    <lastmod>2018-05-22T11:02:15+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

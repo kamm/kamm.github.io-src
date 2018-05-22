@@ -19,9 +19,6 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/favicon.ico">
 
-  
-  <link href="" rel="alternate" type="application/rss+xml" title="kamm" />
-
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
@@ -59,6 +56,11 @@
       <li>kod</li>
         
         
+        <li><a href="">Codes </a></li>
+        
+        
+        
+        
         
         
         
@@ -89,7 +91,7 @@
   <div class="content container">
     <div class="post">
     <h1 class="post-title">Programowanie kart inteligentnych - część 0 - inicjalizacja</h1>
-    <span class="post-date">22 maja 2018</span>
+    <span class="post-date">22  2018</span>
     
     <p>Zaczynam naukę programowania kart inteligentnych. Są to karty do przechowywania kluczy kryptograficznych, certyfikatów a także innych danych. Do tego celu potrzebowałem zamówić kilka takich kart.</p>
 
@@ -107,7 +109,7 @@ If you don’t know how to use it ,please don’t order it! Otherwise, we will n
 
 <p>Dobra, rozumiem, że tak się zabezpieczają przed osobami, które myślą, że to od razu bedzie działać &ldquo;automagicznie&rdquo;. Nie ma tak łatwo.</p>
 
-<p>Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalje będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.</p>
+<p>Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalej będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.</p>
 
 <p>Po drugie karta jest niezainicjalizowana - chociaż tego nie jestem pewien, bo przedtawiała się jako Nigerian ID. Mniejsza z tym - kasujemy wszystko.</p>
 
@@ -148,9 +150,16 @@ send_apdu -sc 0 -APDU c0d6032110404142434445464748494a4b4c4d4e4f
 send_apdu -sc 0 -APDU c0d6033D10404142434445464748494a4b4c4d4e4f
 </code></pre>
 
+<p>Zapisujemy plik jako initialize.gpsh i uruchamiamy</p>
+
+<pre><code>gpshell initialize.gpsh
+</code></pre>
+
 <p>Teraz można zacząć się bawić. Taka karta nie zostanie zablokowana - zawsze można wsyztsko skasować i wgrać ponownie.</p>
 
 <p>Na podstawie <a href="https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/">https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/</a></p>
+
+<p>W następnym wpisie będzie prosty aplet na kartę, a później trochę kodu w &ldquo;normalnej&rdquo; javie - czyli komunikacja z apletem.</p>
     
 
      

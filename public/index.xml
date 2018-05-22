@@ -3,7 +3,7 @@
   <channel>
       <title>kamm</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>https://kamm.github.io/index.xml</link>
+    <link>https://kamm.github.io/</link>
     <language>en-us</language>
     <author>Kamil Mętrak</author>
     <copyright>2018 Kamil Mętrak</copyright>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Programowanie kart inteligentnych - część 0 - inicjalizacja</title>
-      <link>https://kamm.github.io/2018/05/javacard/</link>
+      <link>https://kamm.github.io/2018/05/javacard-0/</link>
       <pubDate>Tue, 22 May 2018 11:02:15 &#43;0100</pubDate>
       <author>Kamil Mętrak</author>
-      <guid>https://kamm.github.io/2018/05/javacard/</guid>
+      <guid>https://kamm.github.io/2018/05/javacard-0/</guid>
       <description>&lt;p&gt;Zaczynam naukę programowania kart inteligentnych. Są to karty do przechowywania kluczy kryptograficznych, certyfikatów a także innych danych. Do tego celu potrzebowałem zamówić kilka takich kart.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -32,7 +32,7 @@ If you don’t know how to use it ,please don’t order it! Otherwise, we will n
 
 &lt;p&gt;Dobra, rozumiem, że tak się zabezpieczają przed osobami, które myślą, że to od razu bedzie działać &amp;ldquo;automagicznie&amp;rdquo;. Nie ma tak łatwo.&lt;/p&gt;
 
-&lt;p&gt;Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalje będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.&lt;/p&gt;
+&lt;p&gt;Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalej będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.&lt;/p&gt;
 
 &lt;p&gt;Po drugie karta jest niezainicjalizowana - chociaż tego nie jestem pewien, bo przedtawiała się jako Nigerian ID. Mniejsza z tym - kasujemy wszystko.&lt;/p&gt;
 
@@ -73,9 +73,16 @@ send_apdu -sc 0 -APDU c0d6032110404142434445464748494a4b4c4d4e4f
 send_apdu -sc 0 -APDU c0d6033D10404142434445464748494a4b4c4d4e4f
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Zapisujemy plik jako initialize.gpsh i uruchamiamy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gpshell initialize.gpsh
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Teraz można zacząć się bawić. Taka karta nie zostanie zablokowana - zawsze można wsyztsko skasować i wgrać ponownie.&lt;/p&gt;
 
-&lt;p&gt;Na podstawie &lt;a href=&#34;https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/&#34;&gt;https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;Na podstawie &lt;a href=&#34;https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/&#34;&gt;https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;W następnym wpisie będzie prosty aplet na kartę, a później trochę kodu w &amp;ldquo;normalnej&amp;rdquo; javie - czyli komunikacja z apletem.&lt;/p&gt;</description>
     </item>
     
     
@@ -143,7 +150,7 @@ send_apdu -sc 0 -APDU c0d6033D10404142434445464748494a4b4c4d4e4f
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/5YbE07aDDDc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/5YbE07aDDDc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/p&gt;
 

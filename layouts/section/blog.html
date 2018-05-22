@@ -7,7 +7,7 @@
   <h1 class="title">Wpisy na blogu</h1> 
   <ul class="posts">
       {{ range .Data.Pages }}
-      <li><span>{{if .Draft}}[draft] {{end}}<a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list"><!--{{ .Date.Format "Mon, Jan 2, 2006" }}-->{{ index $.Site.Data.dni ( printf "%d" .Date.Weekday) }}, {{ .Date.Day }} {{ index $.Site.Data.miesiace (printf "%d" .Date.Month) }} {{ .Date.Year }}</h4></time></span></span></li>
+      <li><span>{{if .Draft}}[draft] {{end}}<a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list"><!--{{ .Date.Format "Mon, Jan 2, 2006" }}-->{{ index $.Site.Data.dni ( printf "dzien%d" .Date.Weekday) }}, {{ .Date.Day }} {{ index $.Site.Data.miesiace (printf "miesiac%d" .Date.Month) }} {{ .Date.Year }}</h4></time></span></span></li>
       {{ end }}
   </ul>
     </div>

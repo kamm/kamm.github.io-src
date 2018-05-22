@@ -1,205 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>kamm</title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>https://kamm.github.io/blog/index.xml</link>
+    <title>Blogs on kamm</title>
+    <link>https://kamm.github.io/blog/</link>
+    <description>Recent content in Blogs on kamm</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Kamil Mętrak</author>
-    <copyright>2018 Kamil Mętrak</copyright>
-    <updated>Tue, 22 May 2018 11:02:15 &#43;0100</updated>
+    <copyright>Kamil Mętrak</copyright>
+    <lastBuildDate>Tue, 22 May 2018 11:02:15 +0100</lastBuildDate>
+    
+	<atom:link href="https://kamm.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Programowanie kart inteligentnych - część 0 - inicjalizacja</title>
-      <link>https://kamm.github.io/2018/05/javacard/</link>
-      <pubDate>Tue, 22 May 2018 11:02:15 &#43;0100</pubDate>
-      <author>Kamil Mętrak</author>
-      <guid>https://kamm.github.io/2018/05/javacard/</guid>
+      <link>https://kamm.github.io/2018/05/javacard-0/</link>
+      <pubDate>Tue, 22 May 2018 11:02:15 +0100</pubDate>
+      
+      <guid>https://kamm.github.io/2018/05/javacard-0/</guid>
       <description>&lt;p&gt;Zaczynam naukę programowania kart inteligentnych. Są to karty do przechowywania kluczy kryptograficznych, certyfikatów a także innych danych. Do tego celu potrzebowałem zamówić kilka takich kart.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Po wpisaniu na aliexpress J2A040 znajdziemy ich wiele i w każdym ogloszeniu jest coś w stylu&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;We can only provide the TK default value (Transport key) ,like: .
-Before you use JCOP Card,you need 2 commands for opening the JCOP21-40K card.
-here is :
-APDU:00A4040010( TK - KEY )
-APDU:00F00000 ( open for Initialize )
-If you don’t know how to use it ,please don’t order it! Otherwise, we will not be responsible for the return.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Dobra, rozumiem, że tak się zabezpieczają przed osobami, które myślą, że to od razu bedzie działać &amp;ldquo;automagicznie&amp;rdquo;. Nie ma tak łatwo.&lt;/p&gt;
-
-&lt;p&gt;Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalje będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.&lt;/p&gt;
-
-&lt;p&gt;Po drugie karta jest niezainicjalizowana - chociaż tego nie jestem pewien, bo przedtawiała się jako Nigerian ID. Mniejsza z tym - kasujemy wszystko.&lt;/p&gt;
-
-&lt;p&gt;Do zabawy potrzebne są:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;czytnik kart - to akurat wiadome&lt;/li&gt;
-&lt;li&gt;narzędzie gpshell &lt;a href=&#34;https://sourceforge.net/projects/globalplatform/&#34;&gt;https://sourceforge.net/projects/globalplatform/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Pełny skrypt do inicjalizacji:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mode_211
-enable_trace
-establish_context
-card_connect
-
-#Oblokowanie z klucza transportowego
-send_apdu -sc 0 -APDU 00A4040010&amp;lt;TK&amp;gt;
-
-#Wyczyszczenie karty
-send_apdu -sc 0 -APDU 00F00000
-
-#Ustawienie protokołu transmisji T=1
-send_apdu -sc 0 -APDU C0D6012301DA
-send_apdu -sc 0 -APDU C0D6014601DA
-send_apdu -sc 0 -APDU C0D6012201FE
-send_apdu -sc 0 -APDU C0D60124010F
-send_apdu -sc 0 -APDU C0D60147010F
-
-#Ustawienie ATR jako J 2 A 0 8 1 , T = 1
-send_apdu -sc 0 -APDU c0d601370b0a4a32413038312C543D31
-send_apdu -sc 0 -APDU c0d6015A0b0a4a32413038312C543D31
-
-#Ustawienie klucza zarządczego na domyślną wartość 404142434445464748494a4b4c4d4e4f (tylko na potrzebny testowe/deweloperskie)
-send_apdu -sc 0 -APDU c0d6030510404142434445464748494a4b4c4d4e4f
-send_apdu -sc 0 -APDU c0d6032110404142434445464748494a4b4c4d4e4f
-send_apdu -sc 0 -APDU c0d6033D10404142434445464748494a4b4c4d4e4f
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Teraz można zacząć się bawić. Taka karta nie zostanie zablokowana - zawsze można wsyztsko skasować i wgrać ponownie.&lt;/p&gt;
-
-&lt;p&gt;Na podstawie &lt;a href=&#34;https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/&#34;&gt;https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
-    
-    
     
     <item>
       <title>ack</title>
       <link>https://kamm.github.io/2016/12/ack/</link>
-      <pubDate>Tue, 27 Dec 2016 21:10:15 CET</pubDate>
-      <author>Kamil Mętrak</author>
+      <pubDate>Tue, 27 Dec 2016 21:10:15 +0100</pubDate>
+      
       <guid>https://kamm.github.io/2016/12/ack/</guid>
-      <description>&lt;p&gt;Przeszukiwanie kodu z konsoli jest problemem. Ja najczęściej używałem dziwnej składni&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;find . -type f | while read l; do grep -Ri &amp;quot;System.err&amp;quot; $l &amp;amp;&amp;amp; echo $l; done
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Działać działa, ale jest nieeleganckie, nieefektywne, ma brzydkie wyjście, dużo błędnych wystąpień (pliki binarne, pliki gita/svna). Słowem - szybki hack.&lt;/p&gt;
-
-&lt;p&gt;Ze względu na moje lenistwo nie chciało mi się szukać niczego innego, a okazało się że było warto. O acku dowiedziałem się z prezentacji babuna.&lt;/p&gt;
-
-&lt;p&gt;Teraz kilka krótkich informacji:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;pomija pliki niebędące kodem (jak np. pliki gita czy svna)&lt;/li&gt;
-&lt;li&gt;jest szybki&lt;/li&gt;
-&lt;li&gt;jest nastawiony na przeszukiwanie kodu - ale nie &amp;ldquo;promuje&amp;rdquo; żadnego języka&lt;/li&gt;
-&lt;li&gt;jest przenośny - napisany w perlu, ja go uzywam na linuksie i widzie i nie mam problemu&lt;/li&gt;
-&lt;li&gt;ułatwia przeszukiwanie tylko określonych zasobów - tu może kilka słów więcej.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Generalnie - rzadko kiedy mamy projekt robiony tylko używając jednej technologii. Do projektu javowego dodany SQL czy też moje najczęstsze połączenie ostatnimi czasy czyli xsl + xsl. Do tego wystarczy dodać prarametr&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ack --java System.err
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Coś takiego znajdzie wystąpienia System.err w plikach java, ale już pliki tekstowe odrzuci.&lt;/p&gt;
-
-&lt;p&gt;W razie czego - wiem że istnieje silver searcher (ag), ale jeszcze nie miałem czasu go sprawdzić :)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://beyondgrep.com/&#34;&gt;http://beyondgrep.com/&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Przeszukiwanie kodu z konsoli jest problemem. Ja najczęściej używałem dziwnej składni
+find . -type f | while read l; do grep -Ri &amp;quot;System.err&amp;quot; $l &amp;amp;&amp;amp; echo $l; done  Działać działa, ale jest nieeleganckie, nieefektywne, ma brzydkie wyjście, dużo błędnych wystąpień (pliki binarne, pliki gita/svna). Słowem - szybki hack.
+Ze względu na moje lenistwo nie chciało mi się szukać niczego innego, a okazało się że było warto. O acku dowiedziałem się z prezentacji babuna.</description>
     </item>
-    
-    
     
     <item>
       <title>Babun - windowsowy shell w którym się zakochasz</title>
       <link>https://kamm.github.io/2016/11/babun-shell-w-ktorym-sie-zakochasz/</link>
-      <pubDate>Tue, 29 Nov 2016 19:30:51 CET</pubDate>
-      <author>Kamil Mętrak</author>
+      <pubDate>Tue, 29 Nov 2016 19:30:51 +0100</pubDate>
+      
       <guid>https://kamm.github.io/2016/11/babun-shell-w-ktorym-sie-zakochasz/</guid>
-      <description>&lt;p&gt;Shell jest narzędziem potrzebnym w pracy chyba każdemu programiście. Oczywiście, wiele IDE już próbowało zmienić to podejście integrując narzędzia do postaci klikanych rozwiązań, integracji gita czy mavena do edytora, ale nadal stary, poczciwy shell ma się dobrze. Jednak pojawia się pewne &amp;ldquo;ale&amp;rdquo;. Używanie w windowsie cmd jest problematyczne - kopiowanie i wklejanie jest bardzo utrudnione, zaznaczenie tekstu jeszcze bardziej a obsługa historii wywołań jest na szczątkowym poziomie. Podobno powershell wiele z tych rzeczy rozwiązuje, ale i tak - unixowy shell jest tym, co programiści lubią.&lt;/p&gt;
-
-&lt;p&gt;Od czasu mojego powrotu do świata windowsa minęło już 11 lat - wczęsniej przez kilka lat używałem tylko linuksa. Miałem epizod na macu, ale to inna sprawa. Początkowo używałem kilku narzędzi przeniesionych do świta windowsowego, czyli miałem ls, wget i takie tam pod windowsem. Później odkryłem cygwina. Było lepiej, ale nadal ograniczał mnie sam emulator terminala - bo w końcu miałem wszystkie narzędzia, ale samo okienko było nadal toporne. Używałem przez pewien czas console2, aż trafiłem na puttycyg, czyli fork putty&amp;rsquo;iego, ale z możliwością działania jako emulator terminala do cygwina. Niestety, projekt przestał być rozwijany, ale i tak używałem go przez kilka lat.&lt;/p&gt;
-
-&lt;p&gt;Ostatnio trafiłem w firmie na szkolenie. Jednym z elementów był git. To co prawda znam (może nei rewelacyjnie, ale i tak poziom był podstawowy) i używam, ale było kilka osób &amp;ldquo;świeżych&amp;rdquo;. Potrzebowały one zainstalować sibie gita na windowsie. Prowadzący polecił babuna. Sam też się nim zainteresowałem i po instalacji zakochałem się w nim. Ale po kolei.&lt;/p&gt;
-
-&lt;p&gt;Czym jest babun? Jest to cygwin instalowany w katalogu użytkownika (nie wymaga nawet uprawnień administracyjnych) z masą dodatków. Przychodzi domyślnie z zainstalowaną już dużą liczbą pakietów, jak chociażby git, wget, curl. Z domyślnie zainstalowanym zsh razem z oh-my-zsh. Z menedżerem pakietów obsługiwanym z wiersza poleceń. Krótko mówiąc jest to cygwin na sterydach.&lt;/p&gt;
-
-&lt;p&gt;Najlepiej obejrzeć sobie filmy&lt;/p&gt;
-
-&lt;p&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//player.vimeo.com/video/95045348&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/5YbE07aDDDc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Jeszcze jedna sprawa - Projekt jest stworzony przez polaków, co przynajmniej dla mnie jest jego kolejnym plusem :)&lt;/p&gt;
-</description>
+      <description>Shell jest narzędziem potrzebnym w pracy chyba każdemu programiście. Oczywiście, wiele IDE już próbowało zmienić to podejście integrując narzędzia do postaci klikanych rozwiązań, integracji gita czy mavena do edytora, ale nadal stary, poczciwy shell ma się dobrze. Jednak pojawia się pewne &amp;ldquo;ale&amp;rdquo;. Używanie w windowsie cmd jest problematyczne - kopiowanie i wklejanie jest bardzo utrudnione, zaznaczenie tekstu jeszcze bardziej a obsługa historii wywołań jest na szczątkowym poziomie. Podobno powershell wiele z tych rzeczy rozwiązuje, ale i tak - unixowy shell jest tym, co programiści lubią.</description>
     </item>
-    
-    
     
     <item>
       <title>Deweloperski Datapower</title>
       <link>https://kamm.github.io/2016/11/deweloperski-datapower/</link>
-      <pubDate>Wed, 23 Nov 2016 22:35:52 CET</pubDate>
-      <author>Kamil Mętrak</author>
+      <pubDate>Wed, 23 Nov 2016 22:35:52 +0100</pubDate>
+      
       <guid>https://kamm.github.io/2016/11/deweloperski-datapower/</guid>
-      <description>&lt;p&gt;Datapower to XML Appliance. Zresztą mniejsza z tym co to jest, bo sam pewnie nie ogarniam wszystkich jego zastosowań i możliwości. Z mojej strony jest wykorzystywany jako środowisko do tworzenia wydajnych usług w oparciu o XSLT. Wszystko fajnie, ale pozostaje kwestia uruchomienia. Na maszynie fizycznej? Marnie - tam jest m. in. produkcja i nikt mi nie pozwoli robić tam developmentu. Na maszynie wirtualnej - spoko, mamy jedną sztukę licencji na wirtualkę. Ale - już parę razy miałem problem z innymi osobami. A to ktoś zmienił mi w czasie testów datasource&amp;rsquo;a, a to ktoś wywalił port http.&lt;/p&gt;
-
-&lt;p&gt;Ze względu na licencję nie mogłem sobie postawić lokalnego DP na lapku. A nawet gdybym postawił - to maszyna wirtualna startowała kilka minut, zajmowała sporo ramu i nie można na niej było zrobić i tak nic innego.&lt;/p&gt;
-
-&lt;p&gt;I tak się męczyłem aż poszedłem na szkolenie :) Szkolenie było nt. devops - co to jest, z czym to się je, jakie są używane narzędzia itp. Jednym z pokazanych narzędzi był docker. Nie rozumiałem jak on działał i generalnie nie miałem do niego przekonania - jestem zawsze sceptycznie nastawiony do &amp;ldquo;nowinek&amp;rdquo;. W pewnej chwili kumpel wpisał sobie w konsoli&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker search datapower
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;i pojawiła się lista.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-ibmcom/datapower                  IBM DataPower Gateway                           36
-ramakrishnasanku/datapower_demo                                                   1
-garytu/datapower                  Enable WebGUI for ibmcom/datapower              0
-patrocinio/datapower                                                              0
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nie do końca rozumiałem co to ma być. Po chwili zostałem wyrwany ze szkolenia i musiałem coś z kimś pogadać. Trafiłem do nowych architektów i tam dziewczyna mi pokazuje odpalonego u siebie datapowera. Z dockera. Zebrałem szczękę z podłogi, wróciłęm na szkolenie, tym razem dając dockerowi szansę. Wszystko pięknie - jest ostępny na dockerze obraz zawierający datapowera. Najnowszą wersję - nowszą niż aktualnie mamy na produkcji.&lt;/p&gt;
-
-&lt;p&gt;Pierwszy raz od lat przeczytałem licencję - obraz jest typowo do zastosowań deweloperskich i testów jednostkowych - czyli wszystko co mi jest potrzebne.&lt;/p&gt;
-
-&lt;p&gt;Oczywiście, jako że pracuję na window$ie to docker mi nie zadziała bezpośrednio - muszę mieć wirtualkę z linuksem - jednak w takim rozwiązaniu ejst to znacznie lżejsze niż wirtualny DP. Nie jest to już wirtualka tylko na DP, ale też na wszystko co wymaga linuksa, a nie wystarcza tu cygwin.&lt;/p&gt;
-
-&lt;p&gt;Także jest to dosyć prosta i szybka opcja na postawienie sobie deweloperskiego datapowera na którym można sobie psuć do woli. Na dodatek nie mogę popsuć za dużo - w końcu gdy coś za bardzo napsuję to po prostu stawiam obraz od nowa. Z wirtualnymi jest trochę więcej zabawy i z reguły wpływa to na innych dewów, a wręcz dotyka admina środowiska dev. Na fizycznych to boję się myśleć - podobno był już przypadek, że jeden gość tak napsuł, że trzeba było wzywać serwis z IBMa. Zatem bezpieczniej mieć swoje środowisko u siebie :)&lt;/p&gt;
-</description>
+      <description>Datapower to XML Appliance. Zresztą mniejsza z tym co to jest, bo sam pewnie nie ogarniam wszystkich jego zastosowań i możliwości. Z mojej strony jest wykorzystywany jako środowisko do tworzenia wydajnych usług w oparciu o XSLT. Wszystko fajnie, ale pozostaje kwestia uruchomienia. Na maszynie fizycznej? Marnie - tam jest m. in. produkcja i nikt mi nie pozwoli robić tam developmentu. Na maszynie wirtualnej - spoko, mamy jedną sztukę licencji na wirtualkę.</description>
     </item>
-    
-    
     
     <item>
       <title>Zaczynamy</title>
       <link>https://kamm.github.io/2016/11/zaczynamy/</link>
-      <pubDate>Wed, 23 Nov 2016 21:06:00 UTC</pubDate>
-      <author>Kamil Mętrak</author>
+      <pubDate>Wed, 23 Nov 2016 21:06:00 +0000</pubDate>
+      
       <guid>https://kamm.github.io/2016/11/zaczynamy/</guid>
-      <description>&lt;p&gt;A w zasadzie to ponownie zaczynam. Postanowiłem ponownie utworzyć tego bloga i zacząć wreszcie coś pisać. Brakowało mi miejsca gdzie mógłbym coś napisać, a miałem co więc tak wyszło. Będę starał się pisać technicznie, ale nie mogę tego zagwarantować - czasem może wyjść coś z życia innego niż tylko kodowanie :)&lt;/p&gt;
-</description>
+      <description>A w zasadzie to ponownie zaczynam. Postanowiłem ponownie utworzyć tego bloga i zacząć wreszcie coś pisać. Brakowało mi miejsca gdzie mógłbym coś napisać, a miałem co więc tak wyszło. Będę starał się pisać technicznie, ale nie mogę tego zagwarantować - czasem może wyjść coś z życia innego niż tylko kodowanie :)</description>
     </item>
-    
     
   </channel>
 </rss>
