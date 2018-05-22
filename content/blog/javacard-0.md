@@ -23,7 +23,7 @@ If you don’t know how to use it ,please don’t order it! Otherwise, we will n
 
 Dobra, rozumiem, że tak się zabezpieczają przed osobami, które myślą, że to od razu bedzie działać "automagicznie". Nie ma tak łatwo.
 
-Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalje będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.
+Po pierwsze karta jest zabezpieczona kluczem transportowym. Jest on na dołączonej płycie CD. Fajnie, chociaż poprawnie to klucz transportowy (dalej będę go po prostu nazywał TK) powinien być wysłany innym kanałem (np. mailem), ale mniejsza z tym - kart nie będę używał produkcyjnie, a bardziej do celów deweloperskich i testowych.
 
 Po drugie karta jest niezainicjalizowana - chociaż tego nie jestem pewien, bo przedtawiała się jako Nigerian ID. Mniejsza z tym - kasujemy wszystko.
 
@@ -63,6 +63,14 @@ send_apdu -sc 0 -APDU c0d6032110404142434445464748494a4b4c4d4e4f
 send_apdu -sc 0 -APDU c0d6033D10404142434445464748494a4b4c4d4e4f
 ```
 
+Zapisujemy plik jako initialize.gpsh i uruchamiamy
+
+```
+gpshell initialize.gpsh
+```
+
 Teraz można zacząć się bawić. Taka karta nie zostanie zablokowana - zawsze można wsyztsko skasować i wgrać ponownie. 
 
 Na podstawie https://www.curriegrad2004.ca/2017/02/dealing-with-unfused-jcop-java-cards-sold-from-aliexpress-or-ebay/
+
+W następnym wpisie będzie prosty aplet na kartę, a później trochę kodu w "normalnej" javie - czyli komunikacja z apletem.
