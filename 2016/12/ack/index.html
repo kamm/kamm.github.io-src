@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> ack  &middot; kamm </title>
+
+  
+  <link rel="stylesheet" href="https://kamm.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://kamm.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://kamm.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="kamm" />
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Raleway']
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="brand"><a href="https://kamm.github.io">kamm</a></h1>
+      <p class="lead">
+       developer&#39;s blog 
+      </p>
+    </div>
+
+
+
+    <ul class="sidebar-nav">
+      <li><a href="https://kamm.github.io/blog">blog</a></li>
+      
+        <li><a href="/about/">o mnie </a></li>
+      
+      <br/>
+      <li>kod</li>
+        
+        
+        
+        
+        <li><a href="https://github.com/kamm/kody-pna">kody-pna </a></li>
+        
+        
+        <li><a href="https://github.com/kamm/package-backup">package-backup </a></li>
+        
+        <li><a href="https://github.com/kamm/tomcat-watchdog">tomcat-watchdog </a></li>
+        
+        
+      
+    </ul>
+      <a href="https://www.facebook.com/kamil.metrak"><i class="fa fa-facebook-square"></i></a>&nbsp;&nbsp;
+      <a href="https://github.com/kamm"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+	  <a href="https://twitter.com/kmetrak"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+      <a href="https://www.linkedin.com/in/kamil-m%c4%99trak-56a63b43"><i class="fa fa-linkedin-square"></i></a>&nbsp;&nbsp;
+      
+
+    <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/>
+    &copy; 2016 Kamil Mętrak.<br/>
+	Some rights reserved.</p>
+    
+  </div>
+</div>
+
+
+  <div class="content container">
+    <div class="post">
+    <h1 class="post-title">ack</h1>
+    <span class="post-date">27 grudnia 2016</span>
+    
+    <p>Przeszukiwanie kodu z konsoli jest problemem. Ja najczęściej używałem dziwnej składni</p>
+
+<pre><code>find . -type f | while read l; do grep -Ri &quot;System.err&quot; $l &amp;&amp; echo $l; done
+</code></pre>
+
+<p>Działać działa, ale jest nieeleganckie, nieefektywne, ma brzydkie wyjście, dużo błędnych wystąpień (pliki binarne, pliki gita/svna). Słowem - szybki hack.</p>
+
+<p>Ze względu na moje lenistwo nie chciało mi się szukać niczego innego, a okazało się że było warto. O acku dowiedziałem się z prezentacji babuna.</p>
+
+<p>Teraz kilka krótkich informacji:</p>
+
+<ul>
+<li>pomija pliki niebędące kodem (jak np. pliki gita czy svna)</li>
+<li>jest szybki</li>
+<li>jest nastawiony na przeszukiwanie kodu - ale nie &ldquo;promuje&rdquo; żadnego języka</li>
+<li>jest przenośny - napisany w perlu, ja go uzywam na linuksie i widzie i nie mam problemu</li>
+<li>ułatwia przeszukiwanie tylko określonych zasobów - tu może kilka słów więcej.</li>
+</ul>
+
+<p>Generalnie - rzadko kiedy mamy projekt robiony tylko używając jednej technologii. Do projektu javowego dodany SQL czy też moje najczęstsze połączenie ostatnimi czasy czyli xsl + xsl. Do tego wystarczy dodać prarametr</p>
+
+<pre><code>ack --java System.err
+</code></pre>
+
+<p>Coś takiego znajdzie wystąpienia System.err w plikach java, ale już pliki tekstowe odrzuci.</p>
+
+<p>W razie czego - wiem że istnieje silver searcher (ag), ale jeszcze nie miałem czasu go sprawdzić :)</p>
+
+<p><a href="http://beyondgrep.com/">http://beyondgrep.com/</a></p>
+
+    
+
+     
+	
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'kammgithubio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+</div>
+</div> 
+
+</body>
+</html>
