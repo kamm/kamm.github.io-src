@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javacard on kamm</title>
+    <link>https://kamm.github.io/series/javacard/</link>
+    <description>Recent content in Javacard on kamm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Kamil Mętrak</copyright>
+    <lastBuildDate>Wed, 23 May 2018 10:52:15 +0200</lastBuildDate>
+    
+	<atom:link href="https://kamm.github.io/series/javacard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Programowanie kart inteligentnych - część 1 - pierwszy program</title>
+      <link>https://kamm.github.io/2018/05/javacard-1/</link>
+      <pubDate>Wed, 23 May 2018 10:52:15 +0200</pubDate>
+      
+      <guid>https://kamm.github.io/2018/05/javacard-1/</guid>
+      <description>Czas zacząć programować. Karty, które mnie intereują i które zamówiłem programuje się w Javie. Są też inne, chyba dotnetowe, ale się nie znam. Zajmę się tylko kartami javoskimi, a dokładniej będę uzywał Java Card Kit w wersji 2.2.2. Do pobrania ze strony Oracla: JavaCard SDK.
+Programy wgrane na kartę są apletami, ale nie ma to nic (poza nazwą) związku z java.applet.Applet. Tu mamy javacard.framework.Applet. Generalnie - javacard jest mocno ograniczoną javą.</description>
+    </item>
+    
+    <item>
+      <title>Programowanie kart inteligentnych - część 0 - inicjalizacja</title>
+      <link>https://kamm.github.io/2018/05/javacard-0/</link>
+      <pubDate>Tue, 22 May 2018 11:02:15 +0100</pubDate>
+      
+      <guid>https://kamm.github.io/2018/05/javacard-0/</guid>
+      <description>&lt;p&gt;Zaczynam naukę programowania kart inteligentnych. Są to karty do przechowywania kluczy kryptograficznych, certyfikatów a także innych danych. Do tego celu potrzebowałem zamówić kilka takich kart.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

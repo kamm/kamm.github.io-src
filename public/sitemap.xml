@@ -65,6 +65,18 @@
   </url>
   
   <url>
+    <loc>https://kamm.github.io/series/javacard/</loc>
+    <lastmod>2018-05-23T10:52:15+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kamm.github.io/series/</loc>
+    <lastmod>2018-05-23T10:52:15+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kamm.github.io/tags/</loc>
     <priority>0</priority>
   </url>

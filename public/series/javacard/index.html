@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> ack  &middot; kamm </title>
+  <title> Javacard  &middot; kamm </title>
 
   
   <link rel="stylesheet" href="https://kamm.github.io/css/poole.css">
@@ -36,7 +36,7 @@
 
 <body>
 
-  <div class="sidebar">
+<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1 class="brand"><a href="https://kamm.github.io">kamm</a></h1>
@@ -109,64 +109,49 @@
   </div>
 </div>
 
-
-  <div class="content container">
-    <div class="post">
-    <h1 class="post-title">ack</h1>
-    <span class="post-date">27 grudnia 2016</span>
-    
-    <p>Przeszukiwanie kodu z konsoli jest problemem. Ja najczęściej używałem dziwnej składni</p>
-
-<pre><code>find . -type f | while read l; do grep -Ri &quot;System.err&quot; $l &amp;&amp; echo $l; done
-</code></pre>
-
-<p>Działać działa, ale jest nieeleganckie, nieefektywne, ma brzydkie wyjście, dużo błędnych wystąpień (pliki binarne, pliki gita/svna). Słowem - szybki hack.</p>
-
-<p>Ze względu na moje lenistwo nie chciało mi się szukać niczego innego, a okazało się że było warto. O acku dowiedziałem się z prezentacji babuna.</p>
-
-<p>Teraz kilka krótkich informacji:</p>
-
-<ul>
-<li>pomija pliki niebędące kodem (jak np. pliki gita czy svna)</li>
-<li>jest szybki</li>
-<li>jest nastawiony na przeszukiwanie kodu - ale nie &ldquo;promuje&rdquo; żadnego języka</li>
-<li>jest przenośny - napisany w perlu, ja go uzywam na linuksie i widzie i nie mam problemu</li>
-<li>ułatwia przeszukiwanie tylko określonych zasobów - tu może kilka słów więcej.</li>
-</ul>
-
-<p>Generalnie - rzadko kiedy mamy projekt robiony tylko używając jednej technologii. Do projektu javowego dodany SQL czy też moje najczęstsze połączenie ostatnimi czasy czyli xsl + xsl. Do tego wystarczy dodać prarametr</p>
-
-<pre><code>ack --java System.err
-</code></pre>
-
-<p>Coś takiego znajdzie wystąpienia System.err w plikach java, ale już pliki tekstowe odrzuci.</p>
-
-<p>W razie czego - wiem że istnieje silver searcher (ag), ale jeszcze nie miałem czasu go sprawdzić :)</p>
-
-<p><a href="http://beyondgrep.com/">http://beyondgrep.com/</a></p>
-
-    
-
-     
-	
-    <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
+   <div class="content container">
+   
     
     
-    if (window.location.hostname == "localhost") 
-        return;
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          
+            <h1 class="title">JavaCard</h1>
+            
+            
 
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'kammgithubio';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
-</div>
-</div> 
+            
+            
 
-</body>
+          
+        
+      
+    
+
+
+
+    <ul>
+    
+      <li><a href="https://kamm.github.io/2018/05/javacard-1/">Programowanie kart inteligentnych - część 1 - pierwszy program</a></li>
+    
+      <li><a href="https://kamm.github.io/2018/05/javacard-0/">Programowanie kart inteligentnych - część 0 - inicjalizacja</a></li>
+    
+    </ul>
+
+  </div>
+  </body>
 </html>

@@ -14,6 +14,7 @@ blogpoststitle = "Wpisy na blogu"
 
 [Taxonomies]
 	tag = "tags"
+	series = "series"
 
 [params]
 	description = "developer's blog"

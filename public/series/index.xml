@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on kamm</title>
+    <link>https://kamm.github.io/series/</link>
+    <description>Recent content in Series on kamm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Kamil Mętrak</copyright>
+    <lastBuildDate>Wed, 23 May 2018 10:52:15 +0200</lastBuildDate>
+    
+	<atom:link href="https://kamm.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javacard</title>
+      <link>https://kamm.github.io/series/javacard/</link>
+      <pubDate>Wed, 23 May 2018 10:52:15 +0200</pubDate>
+      
+      <guid>https://kamm.github.io/series/javacard/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

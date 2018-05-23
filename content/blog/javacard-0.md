@@ -3,6 +3,7 @@ title = "Programowanie kart inteligentnych - część 0 - inicjalizacja"
 type = "post"
 draft = false
 date = "2018-05-22T11:02:15+01:00"
+series = ["JavaCard"]
 
 +++
 
