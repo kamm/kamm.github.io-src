@@ -43,7 +43,7 @@ Najpierw to uruchomiłem pod windowsem. Działa od ręki, żadnych zgrzytów. No
 Później spróbowałem to uruchomić pod linuksem. Ważne - czytnik mi działa pod linuksem, go potwierdziłem używaniem gpshell czy pcsc_scan. Jednak po uruchomieniu dostałem
 
 ```
-$ java -cp target/jcappclient-1.0-SNAPSHOT.jar pl.kamm.jcapp1client.App                                                                                                                                                           ~/jcapp1client
+$ java -cp target/jcappclient-1.0-SNAPSHOT.jar pl.kamm.jcapp1client.App
 java.lang.IndexOutOfBoundsException: Index: 0
         at java.util.Collections$EmptyList.get(Collections.java:4454)
         at pl.kamm.jcapp1client.App.main(App.java:18)
@@ -52,7 +52,7 @@ java.lang.IndexOutOfBoundsException: Index: 0
 Szukałem, szukałem i znalazłem. Trzeba dodać namiary na bibliotekę libpcsclite
 
 ```
-$ java -Dsun.security.smartcardio.library=/usr/lib/x86_64-linux-gnu/libpcsclite.so.1 -cp target/jcappclient-1.0-SNAPSHOT.jar pl.kamm.jcapp1client.App                                                                             ~/jcapp1client
+$ java -Dsun.security.smartcardio.library=/usr/lib/x86_64-linux-gnu/libpcsclite.so.1 -cp target/jcappclient-1.0-SNAPSHOT.jar pl.kamm.jcapp1client.App
 Hello, world!
 ```
 
