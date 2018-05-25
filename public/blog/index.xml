@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Kamil Mętrak</copyright>
-    <lastBuildDate>Wed, 23 May 2018 10:52:15 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 25 May 2018 08:54:15 +0200</lastBuildDate>
     
 	<atom:link href="https://kamm.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Programowanie kart inteligentnych - część 2 - komunikacja</title>
+      <link>https://kamm.github.io/2018/05/javacard-2/</link>
+      <pubDate>Fri, 25 May 2018 08:54:15 +0200</pubDate>
+      
+      <guid>https://kamm.github.io/2018/05/javacard-2/</guid>
+      <description>W poprzednim odcinku utworzyłem bardzo prosty aplet na karcie i wywołałem go z poziomu gpshell. Jednak to jest dobre do testów. W końcu karta ma być wykorzystywana w kryptografii w konkretnej aplikacji.
+Stworzyłem bardzo prostego klienta do apletu - jcapp1client. Aplikacja łączy się z pierwszy z brzegu czytnikiem, wybiera kartę do niego włożoną, wybiera aplet i wywołuje instrukcję B0 01. Nawet bez żadnego sprawdzania błędów, kodów wyjścia, nic. Prościej się chyba nieda.</description>
+    </item>
     
     <item>
       <title>Programowanie kart inteligentnych - część 1 - pierwszy program</title>

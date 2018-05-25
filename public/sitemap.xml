@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kamm.github.io/2018/05/javacard-2/</loc>
+    <lastmod>2018-05-25T08:54:15+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamm.github.io/2018/05/javacard-1/</loc>
     <lastmod>2018-05-23T10:52:15+02:00</lastmod>
   </url>
@@ -54,7 +59,7 @@
   
   <url>
     <loc>https://kamm.github.io/blog/</loc>
-    <lastmod>2018-05-23T10:52:15+02:00</lastmod>
+    <lastmod>2018-05-25T08:54:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -66,13 +71,13 @@
   
   <url>
     <loc>https://kamm.github.io/series/javacard/</loc>
-    <lastmod>2018-05-23T10:52:15+02:00</lastmod>
+    <lastmod>2018-05-25T08:54:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kamm.github.io/series/</loc>
-    <lastmod>2018-05-23T10:52:15+02:00</lastmod>
+    <lastmod>2018-05-25T08:54:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,7 +88,7 @@
   
   <url>
     <loc>https://kamm.github.io/</loc>
-    <lastmod>2018-05-23T10:52:15+02:00</lastmod>
+    <lastmod>2018-05-25T08:54:15+02:00</lastmod>
     <priority>0</priority>
   </url>
   
