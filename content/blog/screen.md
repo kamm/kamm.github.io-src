@@ -76,13 +76,13 @@ czy co tam macie u siebie. Teraz po kolei:
 
 1. Zatrzymujemy proces (nie kończymy!!!) ```Ctrl+z```
 
-2. Wznawiamy do w tle ```bg```
+2. Wznawiamy go w tle ```bg```
 
 3. Odpinamy go od terminala ```disown %1```
 
 4. Odpalamy screena ```screen```
 
-5. Znajdujemy PID procesu (pojawił się wcześniej na ekranie)
+5. Znajdujemy PID procesu (pojawił się wcześniej na ekranie albo szukamy przy uzyciu ps, pstree, pgrep, czegokolwiek)
 
 6. Przypinamy proces do bieżącego terminala ```reptyr <pid>```
 
