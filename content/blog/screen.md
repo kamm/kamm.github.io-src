@@ -73,11 +73,17 @@ sudo apt-get install reptyr
 sudo pacman -S reptyr
 ```
 czy co tam macie u siebie. Teraz po kolei:
+
 1. Zatrzymujemy proces (nie kończymy!!!) ```Ctrl+z```
+
 2. Wznawiamy do w tle ```bg```
+
 3. Odpinamy go od terminala ```disown %1```
+
 4. Odpalamy screena ```screen```
+
 5. Znajdujemy PID procesu (pojawił się wcześniej na ekranie)
+
 6. Przypinamy proces do bieżącego terminala ```reptyr <pid>```
 
 Reptyr może nie zadziałać - poleci komunikat
