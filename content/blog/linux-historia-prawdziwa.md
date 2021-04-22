@@ -1,0 +1,24 @@
++++
+title = "Linux - historia prawdziwa" 
+type = "post"
+date = "2021-04-22T15:56:15+02:00"
++++
+Tym razem będzie bardziej blognotka. Wielokrotnie byłem określany jako "ten windowsiarz", co dla osób, które znają mnie trochę dłużej będzie zdziwieniem. Ale może po kolei.
+
+Gdy zacząłen studia najpopularniejszymi systemami były 2 windowsy - 98 i 2000 (o ME chyba wsyscy chcą zapomnieć). Był to rok 2001, czyli chwila przed pojawieniem się XP. Z linuksem (dobra, GNU/Linux) miałem minimalne doświadczenie - próbowałem używać wcześniej RedHata (5.1 Manhattan), Monkey Linux, był też Mandrake Linux, ale tak jakoś nigdy w ten temat głębiej nie wszedłem. Głównym problemem była kwestia kompatybilności sprzętu. 
+
+Jednak na studiach kumpel pokazał mi Slackware i ten system jakoś mi się spodobał. Trochę hardcorowy, ale ciekawy. Trzeba się było trochę nakombinować, może trochę taka sztuka dla sztuki, ale udało mi się poznać linuksa i nawet udało mi się na nim normalnie pracować. Oczywiście, do gier pozostał windows. 
+
+Tak minęły jakieś 2-3 lata i kupiłem pierwszego laptopa. Chciałem tu spróbowac czegoś innego. Slackware był fajny, ale tak trochę z zazdrością patrzyłen jak np. na debianie wystarcza apt-get install i gotowe, a ja muszę się męczyć jak jaskiniowiec. Postanowiłem na lapku postawić debiana. Moja przygoda wtedy skończyła sie dosyć szybko - debian, jako system w którym wszystko jest stabilnem czyli trochę przestarzałe - miał cały czas XFree86, a nie Xorg'a. To powodowało, że na moim lapku nie byłem w stanie dorze skonfigurować grafiki. Cóż. Bywa. Nie pamiętam już dlaczego nie poszedłem w sida, ale dzisiaj to juz nieistotne. Pojawiła się wtedy nowa dystrybucja, bazująca na debianie - Ubuntu. Spodobało mi się, że wszystko działa out-of-the-box i tak zacząłem uzywać _łubudubu_.
+
+W 2006 roku zacząłem pracę. W pracy jednak systemem używanym na serwerach był windows więc aby skonfigurować u siebie jakieś środowisko deweloperskie potrzebowałem windowsa. I tak po kilku latach uzywania pingwina wróciłem do okien. A w linuksie byłem zdecydowanie poweruserem - wystarczy powiedzieć, że zdecydowałem się uzywać jako środowiska graficznego najpierw mocno dostrojonego pod siebie windowmakera, a później FVWM Crystal - chyba najpopularniejszego w tamtych czasach managera okien wśród ludzi chwalących się screenshotami pulpitu.
+
+Jednak w pracy potrzebowałen windowsa. I tak w niego wsiąkłem. Jedna firma, druga, trzecia... Ale zawsze mi brakowało trochę linuksa - najpierw była proteza w postaci przynajmniej paru narzędzi teminalowych - zawsze coś. Najpierw był MinGW. Potem krótki epizod z MacOSem - wreszcie mogłem pracować z "natywnym" bashem :) Potem powrót do windowsa, odkrycie cygwina i było już całkiem fajnie. W końcu zacząłem używac babuna (o którym pisałem w 2016 roku). W firmie, w której aktualnie pracuję nie ma problemu aby uzywać linuksa, ale jakoś się na to nie zdecydowałem.
+
+Jakiś rok temu próbowałem na prywatnym komputerze wrócic do linukasa na desktopie - bo uzycie na serwerach to dla mnie oczywistość i nie jest to dla mnie trudne, a w konsoli zawsze mi się najlepiej pracowało. Nie mogłem jednak sobie poradzić w nowym ubuntu. Coś mi cały czas nie pasowało, chociaż może w pewnym sensie przyzwyczaiłem się do pewnych udogodnień w windowsie.
+
+W tym roku stwierdziłem, że kupię sobie coś ciekawego - thinkpada. Wybrałem X230. I oczywiście tu powędruje linux. Początkowo chciałem debiana, ale stwierdziłem że wypróbuję coś zupełnie innego. Dystrybucję o której tylko słyszałem, ale zawsze chwaloną i wielokrotnie orównywaną ze slackiem, z którego kiedyś korzystałem - Arch Linux.
+
+Thinkpad jak to thinkpad - pod pingiwnem obsługiwane wszystko bez najmniejszego problemu. Od archa zawsze odrzucąło mnie przez pewne lenistwo - kwestia instalacji. Tak, ta dystrybucja nie ma instalatora. Nawet tak podstawowego jak 20 lat temu miał slackware czy debian. Nie - tu wszystko trzeba zrobić samemu. Jednak po przezwyciężeniu lenistwa i doczytaniu trochę w arch wiki postawiłem system. Chciałem go mieć dosyć minimalistyczny i zastanawiałem się nad instalcją w stylu konfiguracji Luke'a Smitha, ale nie pasowało mi to. Z powodu wspamnianego lenistwa bazowałem na czyjejś konfiguracji i trafiłem na fajny zestaw narzędzi - [GitHub - addy-dclxvi/dotfiles: My personal backup of my dotfiles on ThinkPad-X230-Debian-Openbox and Aspire-A514-Debian-Fluxbox](https://github.com/addy-dclxvi/dotfiles). Czyli wybrałem openboxa - jako że pamiętam jeszcze blackboksa i późniejszego fluxboksa to mi bardzo podpasował. Addy uzywa debiana - tu musiałem trochę rzeczy wykombinować, bo nie zadziałały od razu, ale to nie problem. Uzupełniłem kilkoma pomysłami od Luke'a Smitha i tak udało mi się wreszcie wrócić do uzywania linuksa jako daily. I czuję,że była to dobra decyzja.
+
+![screen](/images/Cheese_21.04.13_21.06.50.png)
