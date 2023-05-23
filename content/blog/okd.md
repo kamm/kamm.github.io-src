@@ -38,7 +38,8 @@ Po instalacji należy doinstalować kilka pakietów:
 - bind-utils
 - haproxy
 - dhcp-server
-- httpd nfs-utils
+- httpd 
+- nfs-utils
 - git
 
 Dodatkowo warto zainstalować jq
