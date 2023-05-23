@@ -359,8 +359,8 @@ Potrzebne będą nam pull secrety do pobrania obrazów z registry RedHata. Możn
 Domyślne pull secret to
 ```
 {
-	“auths”:{
-		“fake”:{“auth”: “bar”}
+	"auths":{
+		"fake":{"auth": "bar"}
 	}
 }
 ```
